@@ -45,6 +45,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 						<th>Direccion</th>
 						<th>Peso</th>
 						<th>Estatura</th>
+						<th>IMC</th>
+						<th>Estado</th>
 						<th>Acciones</th>
 					<tr/>
 				</thead>
@@ -81,7 +83,13 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 							<td>
 								<c:out value="${paciente.estatura}"/>
 							</td>
-							<td> <a href="<%=request.getContextPath()%>/edit?id=${paciente.id}">Editar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="delete?id=<c:out value='${paciente.id}'/>">Borrar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="average?id=<c:out value='${usuario.id}'/>">Calcular Promedio</a></td>
+							<td>
+								<c:out value="${paciente.imc}"/>
+							</td>
+							<td>
+								<c:out value="${paciente.estado}"/>
+							</td>
+							<td> <a href="<%=request.getContextPath()%>/edit?id=${paciente.id}">Editar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="delete?id=<c:out value='${paciente.id}'/>">Borrar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="imc?id=<c:out value='${paciente.id}'/>">Calcular IMC</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,6 +47,10 @@ public class Paciente implements Serializable {
 	private BigDecimal peso;
 
 	private String telefono;
+	
+	@Transient
+	private double imc;
+	private String estado;
 
 	public Paciente(String apellido, String direccion, String documento, String email, BigDecimal estatura,
 			Date fechanacimiento, String genero, String nombre, BigDecimal peso, String telefono) {
@@ -60,6 +65,27 @@ public class Paciente implements Serializable {
 		this.nombre = nombre;
 		this.peso = peso;
 		this.telefono = telefono;
+	}
+	
+	public double calcularImc() {
+		this.setImc(((this.peso).doubleValue()/(this.estatura).doubleValue()));
+		return imc;
+	}
+	public String calcularEstado() {
+		if(imc<18.5) {
+			this.setEstado( "Bajo peso");
+		}else if(imc>18.5 && imc<24.9) {
+			this.setEstado("Normal");
+		}else if(imc>25 && imc<29.9) {
+			this.setEstado("SObrpeso");
+		}else if(imc>30 && imc<34.9) {
+			this.setEstado("Obesidad 1");
+		}else if(imc>35 && imc<39.9) {
+			this.setEstado("Obseidad 2");
+		}else if(imc>40) {
+			this.setEstado("Obesidad 3");
+		}
+		return estado;
 	}
 
 

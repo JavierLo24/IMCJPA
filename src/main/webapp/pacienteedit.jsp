@@ -51,28 +51,28 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					<label>Apellido del Paciente</label> <input type="text" value="<c:out value='${paciente.email}'/>" class="form-control" name="apellido">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Documento del Paciente</label> <input type="text" value="<c:out value='${paciente.pais}'/>" class="form-control" name="documento">
+					<label>Documento del Paciente</label> <input type="text" value="<c:out value='${paciente.documento}'/>" class="form-control" name="documento">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Email del Paciente</label> <input type="text" value="<c:out value='${paciente.nota1}'/>" class="form-control" name="email">
+					<label>Email del Paciente</label> <input type="text" value="<c:out value='${paciente.email}'/>" class="form-control" name="email">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Genero del Paciente</label> <input type="text" value="<c:out value='${paciente.nota2}'/>" class="form-control" name="genero">
+					<label>Genero del Paciente</label> <input type="text" value="<c:out value='${paciente.genero}'/>" class="form-control" name="genero">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Fecha nacimiento de Paciente</label> <input type="text" value="<c:out value='${paciente.nombre}'/>" class="form-control" name="fechanacimiento">
+					<label>Fecha nacimiento de Paciente</label> <input type="text" value="<c:out value='${paciente.fechanacimiento}'/>" class="form-control" name="fechanacimiento">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Direccion del Paciente</label> <input type="text" value="<c:out value='${paciente.email}'/>" class="form-control" name="direccion">
+					<label>Direccion del Paciente</label> <input type="text" value="<c:out value='${paciente.direccion}'/>" class="form-control" name="direccion">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Telefono del Paciente</label> <input type="text" value="<c:out value='${paciente.pais}'/>" class="form-control" name="telefono">
+					<label>Telefono del Paciente</label> <input type="text" value="<c:out value='${paciente.telefono}'/>" class="form-control" name="telefono">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Peso del Paciente</label> <input type="text" value="<c:out value='${paciente.nota1}'/>" class="form-control" name="peso">
+					<label>Peso del Paciente</label> <input type="text" value="<c:out value='${paciente.peso}'/>" class="form-control" name="peso">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Estatura del Paciente</label> <input type="text" value="<c:out value='${paciente.nota2}'/>" class="form-control" name="estatura">
+					<label>Estatura del Paciente</label> <input type="text" value="<c:out value='${paciente.estatura}'/>" class="form-control" name="estatura">
 				</fieldset>
 				<button type="submit" class="btn btn-success">Guardar</button>
 			</div>

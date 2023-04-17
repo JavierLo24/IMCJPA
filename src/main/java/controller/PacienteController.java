@@ -51,8 +51,8 @@ public class PacienteController extends HttpServlet {
 		case "/update":
 			actualizarPaciente(request, response);
 			break;
-		case "/average":
-			promedioNotas(request, response);
+		case "/imc":
+			imc(request, response);
 			break;	
 		default:
 			listPaciente(request, response);
@@ -154,8 +154,14 @@ public class PacienteController extends HttpServlet {
 		request.getRequestDispatcher("/list").forward(request, response);
 	}
 	
-	private void promedioNotas(HttpServletRequest request, HttpServletResponse response) 
+	private void imc(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, SQLException, IOException {
+		Integer id = Integer.parseInt(request.getParameter("id"));
+		PacienteDao pDao = new PacienteDao();
+		Paciente p = pDao.find(id);
+		p.calcularImc();
+		p.calcularEstado();
+		request.getRequestDispatcher("/list").forward(request, response);
 	}
 	
 	private void eliminarPaciente(HttpServletRequest request, HttpServletResponse response) 
